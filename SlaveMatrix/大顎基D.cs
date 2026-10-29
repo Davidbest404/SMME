@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using _2DGAMELIB;
+
+namespace SlaveMatrix
+{
+	[Serializable]
+	public class 大顎基D : EleD
+	{
+		public 大顎基D()
+		{
+			this.ThisType = base.GetType();
+		}
+
+		public void 顎左接続(EleD e)
+		{
+			this.顎左_接続.Add(e);
+			e.Par = this;
+			e.接続情報 = 接続情報.大顎基_顎左_接続;
+		}
+
+		public void 顎右接続(EleD e)
+		{
+			this.顎右_接続.Add(e);
+			e.Par = this;
+			e.接続情報 = 接続情報.大顎基_顎右_接続;
+		}
+
+		public override Ele GetEle(double DisUnit, Med Med, 体配色 体配色)
+		{
+			return new 大顎基(DisUnit, this.配色指定, 体配色, Med, this);
+		}
+
+		public bool 甲殻下_表示 = true;
+
+		public bool 甲殻_表示 = true;
+
+		public bool 線左_表示 = true;
+
+		public bool 線右_表示 = true;
+
+		public bool 刺左_表示 = true;
+
+		public bool 刺右_表示 = true;
+
+		public List<EleD> 顎左_接続 = new List<EleD>();
+
+		public List<EleD> 顎右_接続 = new List<EleD>();
+	}
+}

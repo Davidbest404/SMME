@@ -1,0 +1,21 @@
+﻿using System;
+using _2DGAMELIB;
+
+namespace SlaveMatrix
+{
+	[Serializable]
+	public class 潮吹_小_獣D : 潮吹_小D
+	{
+		public 潮吹_小_獣D()
+		{
+			this.ThisType = base.GetType();
+		}
+
+		public override Ele GetEle(double DisUnit, Med Med, 体配色 体配色)
+		{
+			return new 潮吹_小_獣(DisUnit, this.配色指定, 体配色, Med, this);
+		}
+
+		public bool 雫_表示;
+	}
+}

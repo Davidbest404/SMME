@@ -1,0 +1,17 @@
+﻿using System;
+
+namespace SlaveMatrix
+{
+	[Serializable]
+	public class 射精D : EleD
+	{
+		public 射精D()
+		{
+			this.ThisType = base.GetType();
+		}
+
+		public bool 精液_表示 = true;
+
+		public bool 精液掛け_表示 = true;
+	}
+}
